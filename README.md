@@ -38,4 +38,6 @@ telnet 127.0.0.1 10020
 ### 切换select
 
 默认使用epoll加边缘触发，如果想使用select，打开主CMakeLists.txt，取消注释
-![image-20250515003226595](C:\Users\32301\AppData\Roaming\Typora\typora-user-images\image-20250515003226595.png)
+```
+# add_definitions(-DUSE_SELECT)
+```

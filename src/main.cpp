@@ -15,7 +15,7 @@ public:
     }
 
     virtual void read_call_back(const char*data,int size) override{
-        std::cout << string(data,size);
+        LOG_INFO(string(data,size));
         write(data,size);
     }
 };
