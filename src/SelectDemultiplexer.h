@@ -11,10 +11,11 @@ private:
     fd_set err_set;
 public:
     SelectDemultiplexer();
-    virtual ~SelectDemultiplexer(){};
-    int regist(EventHandler*,Event) final override;
+    virtual ~SelectDemultiplexer();
+    int regist(EventHandler_share_ptr,Event) final override;
     int remove(Handle) final override;
-    int wait_event(std::unordered_map<Handle, EventHandler>,Event) final override;
+    int modify(EventHandler_share_ptr handler,Event event) final override;
+    int wait_event(std::unordered_map<Handle, EventHandler_share_ptr>&,int) final override;
 };
 
 
